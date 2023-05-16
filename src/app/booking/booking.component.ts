@@ -20,7 +20,6 @@ export class BookingComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.form.valueChanges.subscribe(change => console.log(change)); // normally custom validation here
     this.form.get('travelDatetime')?.valueChanges.subscribe(dateChange => {
       if (dateChange instanceof Date)
         this.bookingDateTimeUtc = FormHelpers.userTimezoneToSpecifiedTimeZone(dateChange, this.timeZone);
