@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'app/shell/footer/footer.component.scss';
+@include footer-component;
+@import 'app/shell/header/header.component.scss';
+@include header-component;
+@import 'app/booking/booking.component.scss';
+@include booking-component;
+@import 'app/home/home.component.scss';
+@include home-component;

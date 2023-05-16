@@ -1,0 +1,160 @@
+<h2 class="text-center mb-4 mt-5 display-4">Book a transfer</h2>
+<div class="container d-flex justify-content-center form-container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-style">
+    <div class="row d-flex justify-content-between margin-between">
+      <div class="col">
+        <label for="travellerName" class="form-check-lable"
+          >Traveller Name:</label
+        >
+        <input
+          type="text"
+          class="form-control invalid-input"
+          id="travellerName"
+          formControlName="travellerName"
+          aria-describedby="travellerName"
+          placeholder="Enter name"
+          required
+          [ngClass]="{
+            'invalid-input':
+              form.get('travellerName')?.touched &&
+              form.get('travellerName')?.status === 'INVALID'
+          }"
+        />
+        <div
+          *ngIf="
+            form.get('travellerName')?.touched &&
+            form.get('travellerName')?.status === 'INVALID'
+          "
+          class="error"
+        >
+          *required
+        </div>
+      </div>
+      <div class="col">
+        <label for="travellerEmail" class="form-check-lable"
+          >Email address</label
+        >
+        <input
+          type="email"
+          class="form-control"
+          id="travellerEmail"
+          formControlName="travellerEmail"
+          aria-describedby="emailHelp"
+          placeholder="Enter email"
+          required
+          [ngClass]="{
+            'invalid-input':
+              form.get('travellerEmail')?.touched &&
+              form.get('travellerEmail')?.status === 'INVALID'
+          }"
+        />
+        <div
+          *ngIf="
+            form.get('travellerEmail')?.touched &&
+            form.get('travellerEmail')?.status === 'INVALID'
+          "
+          class="error"
+        >
+          *required
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex align-items-end margin-between">
+      <div class="col">
+        <label for="channel" class="form-check-lable">Channel:</label>
+        <select
+          class="form-select"
+          id="channel"
+          formControlName="channel"
+          required
+          [ngClass]="{
+            'invalid-input':
+              form.get('channel')?.touched &&
+              form.get('channel')?.status === 'INVALID'
+          }"
+        >
+          <option value="" disabled selected>Select Channel</option>
+          <option value="partner">Partner</option>
+          <option value="agent">Agent</option>
+          <option value="direct customer">Direct Customer</option>
+        </select>
+        <div
+          *ngIf="
+            form.get('channel')?.touched &&
+            form.get('channel')?.status === 'INVALID'
+          "
+          class="error"
+        >
+          *required
+        </div>
+      </div>
+      <div class="col form-check d-flex justify-content-between">
+        <p class="form-check-label">Meet & Greet</p>
+        <input
+          class="form-check-input p-3"
+          type="checkbox"
+          id="meetAndGreet"
+          formControlName="meetAndGreet"
+          aria-describedby="meetAndGreet"
+        />
+      </div>
+    </div>
+    <div class="row d-flex margin-between">
+      <div class="col">
+        <label for="travelDatetime" class="form-check-lable"
+          >Travel Datetime:</label
+        >
+        <input
+          type="datetime-local"
+          class="form-control"
+          id="travelDatetime"
+          formControlName="travelDatetime"
+          required
+          [ngClass]="{
+            'invalid-input':
+              form.get('travelDatetime')?.touched &&
+              form.get('travelDatetime')?.status === 'INVALID'
+          }"
+        />
+        <div
+          *ngIf="
+            form.get('travelDatetime')?.touched &&
+            form.get('travelDatetime')?.status === 'INVALID'
+          "
+          class="error"
+        >
+          *required
+        </div>
+      </div>
+      <div class="col">
+        <label for="bookingPrice" class="form-check-lable"
+          >Booking Price:</label
+        >
+        <input
+          type="number"
+          class="form-control"
+          id="bookingPrice"
+          formControlName="bookingPrice"
+          required
+          [ngClass]="{
+            'invalid-input':
+              form.get('bookingPrice')?.touched &&
+              form.get('bookingPrice')?.status === 'INVALID'
+          }"
+        />
+        <div
+          *ngIf="
+            form.get('bookingPrice')?.touched &&
+            form.get('bookingPrice')?.status === 'INVALID'
+          "
+          class="error"
+        >
+          *required
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-end pt-3 pb-3">
+      <button class="btn btn-outline-secondary" type="submit">Submit</button>
+    </div>
+  </form>
+</div>

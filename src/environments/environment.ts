@@ -2,8 +2,13 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+import { ApiConfig } from "src/app/api/api-config";
+
 export const environment = {
-  production: false
+  production: false,
+  api: {
+    serverUrl: "https://jayridechallengeapi.azurewebsites.net"
+  } as ApiConfig
 };
 
 /*

@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="d-flex justify-content-center mt-5">
+    <div>
+      <h4 class="display-8">To {{ to }}</h4>
+      <h4 class="display-8">From {{ from }}</h4>
+    </div>
+  </div>
+  <table class="table mt-5">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Vehicle Type</th>
+        <th scope="col">Price/Passenger</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let listing of listings">
+        <td>{{ listing.name }}</td>
+        <td>{{ listing.vehicleType.name }}</td>
+        <td>{{ currencyConvertor(listing.pricePerPassenger) }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="mt-5">
+    <div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Total</th>
+            <th scope="col">Min</th>
+            <th scope="col">Max</th>
+            <th scope="col">Avg</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ fullListings.length }}</td>
+            <td>{{ currencyConvertor(minPrice) }}</td>
+            <td>{{ currencyConvertor(maxPrice) }}</td>
+            <td>{{ currencyConvertor(avgPrice) }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

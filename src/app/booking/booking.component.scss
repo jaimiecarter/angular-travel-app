@@ -1,0 +1,21 @@
+@mixin booking-component {
+  .form-container {
+    display: grid;
+    place-items: center;
+    min-height: 60vh;
+  }
+  .form-style {
+    width: 72%;
+  }
+  .error {
+    color: red;
+    height: 1em;
+   }
+  .margin-between {
+    margin-bottom: 2em;
+  }
+  .place-holder {
+    height: 0;
+  }
+  
+}
